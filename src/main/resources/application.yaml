@@ -1,1 +1,9 @@
-
+openapi:
+  title: 'Application API'
+  description: 'Text punctuation checker'
+  version: '1.0'
+  server-url: 'http://localhost:8080'
+  server-description: 'Server URL in Development environment'
+  contact-name: 'Dmitry Murygin'
+  contact-email: 'muryginds@gamil.com'
+  contact-url: 'https://github.com/Muryginds/BeatifulCodeContest'
