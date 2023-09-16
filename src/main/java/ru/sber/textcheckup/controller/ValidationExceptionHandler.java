@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import ru.sber.textcheckup.dto.ErrorResponseDTO;
 
 import java.util.stream.Collectors;
 
@@ -24,6 +25,6 @@ public class ValidationExceptionHandler extends ResponseEntityExceptionHandler {
         .map(DefaultMessageSourceResolvable::getDefaultMessage)
         .collect(Collectors.joining(", "));
 
-    return ResponseEntity.badRequest().body(errorText);
+    return ResponseEntity.badRequest().body(new ErrorResponseDTO(errorText));
   }
 }
