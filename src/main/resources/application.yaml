@@ -1,3 +1,10 @@
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-doc
+
 openapi:
   title: 'Application API'
   description: 'Text punctuation checker'

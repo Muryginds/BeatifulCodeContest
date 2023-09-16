@@ -13,6 +13,7 @@ import ru.sber.textcheckup.dto.ErrorResponseDTO;
 
 @Tag(name = "Text punctuation checking controller")
 public interface SwaggerPunctuationController {
+
     @Operation(summary = "Checks text for correct brackets")
     @ApiResponse(
             responseCode = "200",
