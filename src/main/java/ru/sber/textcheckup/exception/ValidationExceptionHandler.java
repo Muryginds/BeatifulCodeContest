@@ -1,4 +1,4 @@
-package ru.sber.textcheckup.controller;
+package ru.sber.textcheckup.exception;
 
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
@@ -16,15 +16,15 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class ValidationExceptionHandler extends ResponseEntityExceptionHandler {
 
-  @Override
-  protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                @NonNull HttpHeaders headers,
-                                                                @NonNull HttpStatusCode status,
-                                                                @NonNull WebRequest request) {
-    var errorText = ex.getBindingResult().getAllErrors().stream()
-        .map(DefaultMessageSourceResolvable::getDefaultMessage)
-        .collect(Collectors.joining(", "));
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+                                                                  @NonNull HttpHeaders headers,
+                                                                  @NonNull HttpStatusCode status,
+                                                                  @NonNull WebRequest request) {
+        var errorText = ex.getBindingResult().getAllErrors().stream()
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                .collect(Collectors.joining(", "));
 
-    return ResponseEntity.badRequest().body(new ErrorResponseDTO(errorText));
-  }
+        return ResponseEntity.badRequest().body(new ErrorResponseDTO(errorText));
+    }
 }
