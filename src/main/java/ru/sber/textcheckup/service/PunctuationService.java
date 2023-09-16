@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import ru.sber.textcheckup.dto.CheckBracketsRequestDTO;
 import ru.sber.textcheckup.dto.CheckBracketsResponseDTO;
 
-import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 @Service
 public class PunctuationService {
@@ -21,7 +21,7 @@ public class PunctuationService {
     }
 
     private boolean areBracketsCorrect(String text) {
-        Deque<Bracket> stack = new ArrayDeque<>();
+        Deque<Bracket> stack = new LinkedList<>();
 
         for (int i = 0; i < text.length(); i++) {
             char current = text.charAt(i);
