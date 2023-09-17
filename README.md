@@ -32,11 +32,24 @@ To run the project follow next steps:
 
 - download project files
 - open terminal inside root folder
-- create package using following commands(make sure maven is installed):
+- if you have <b>Maven</b> installed, use these commands to create and run package:
     ```agsl
     mvn clean package
-    ```
-- run project using next command
-    ```agsl
+  
     java -jar target/TextCheckup-0.0.1-SNAPSHOT.jar
     ```
+- in other case you can you <b>Maven Wrapper</b> to run the project:
+
+  on Unix:
+  ```agsl
+  ./mvnw clean package
+  
+  ./mvnw spring-boot:run
+  ```
+
+  on Windows:
+  ```agsl
+  mvnw.cmd clean package
+  
+  mvnw.cmd spring-boot:run
+  ```
