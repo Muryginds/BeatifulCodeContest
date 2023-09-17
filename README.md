@@ -24,6 +24,7 @@ API documentation http://localhost:8080/swagger-doc
 Technology stack:
 
 - Spring Boot 3.0.3 (Web, Test, Validation)
+- Java 17
 - Lombok
 - Swagger 3
 
